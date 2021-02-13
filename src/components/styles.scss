@@ -1,0 +1,58 @@
+$main: #deeaee;
+$header: #674d3c;
+$card: #50394c;
+* {
+  background-color: $main;
+}
+
+h1 {
+  text-align: center;
+  color: $header;
+}
+.service {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  place-items: center;
+
+  .service-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(25rem, 30rem));
+    grid-template-rows: repeat(2, minmax(25rem, 30rem));
+    place-items: center;
+    grid-gap: 2rem;
+  }
+  .card {
+    height: 80%;
+    width: 80%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0 0 0.5rem #ccc;
+    margin: 2rem;
+    color: $card;
+    cursor: pointer;
+  }
+  p {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    color: $card;
+  }
+  a {
+    word-wrap: break-word;
+  }
+}
+
+@media (max-width: 991px) {
+  
+  .service {
+    height: auto;
+    .service-container {
+      grid-template-columns: repeat(3, minmax(30rem, 1fr));
+      grid-template-columns: repeat(2, minmax(30rem, 1fr));
+      grid-auto-rows: 30rem;
+      width: 90vw;
+    }
+  }
+}
